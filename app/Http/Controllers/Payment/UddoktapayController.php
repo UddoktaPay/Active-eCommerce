@@ -26,11 +26,6 @@ class UddoktapayController extends Controller
 
     public function pay(Request $request)
     {
-        if (Auth::user()->phone == null) {
-            flash(translate('Please add phone number to your profile'))->warning();
-            return redirect()->route('profile');
-        }
-
         if (Auth::user()->email == null) {
             $email = 'customer@exmaple.com';
         } else {
